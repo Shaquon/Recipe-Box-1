@@ -1,0 +1,16 @@
+<h1>Django Recipes for the Downtrotten</h1>
+
+<h2>Recipes by programmers, for the programmers</h3>
+
+<ul>
+    {% for things in data %}
+        <li><a href = recipe/{{things.id}}>{{ things.recipe_name }}</a>, by <a href = chef/{{things.id}}>{{ things.chef }}</a></li>
+    {% endfor %}
+</ul>
+
+{% comment %} 
+same for steps but ordered
+stack = things.ingredients.split(".")
+for ingredients in stack:
+    <ul>{{ingredients}}</ul>
+{% endcomment %}

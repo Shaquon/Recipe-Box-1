@@ -1,0 +1,19 @@
+<h1>Django Recipes for the Downtrotten</h1>
+<h2>{{ recipe }}</h2>
+<h3>Ingredients:</h3>
+{% for foo in ingredients %}
+<h4><ul>
+    <li>
+    {{ foo }}
+    </li>
+</ul></h4>
+{% endfor %}
+<h3>Steps:</h3>
+<h4><ol>
+{% for foo in steps %}
+    <li>
+    {{ foo }}
+    </li>
+{% endfor %}
+</ol></h4>
+
