@@ -24,6 +24,7 @@ class Recipe(models.Model):
     recipe_name = models.CharField(max_length=50)
     ingredients = models.TextField()
     steps = models.TextField()
+    time_required = models.TextField()
 
     def __str__(self):
         return f"{self.recipe_name}"

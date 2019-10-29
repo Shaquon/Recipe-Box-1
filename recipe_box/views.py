@@ -26,5 +26,4 @@ def chef_detail(request, id):
     chef = Chef.objects.filter(id=id).first()
     recipes = Recipe.objects.filter(chef=chef)
     
-
     return render(request, html, {"chef": chef, "recipes": recipes})
