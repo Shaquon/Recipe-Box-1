@@ -1,6 +1,6 @@
 from django.shortcuts import render
 
-from recipe_box.models import Recipe
+from recipe_box.models import Recipe,Chef
 
 def index(request):
     html = "index.html"
@@ -23,7 +23,8 @@ def recipe_detail(request, id):
 def chef_detail(request, id):
     html = "chef.html"
 
-    chefs = Recipe.objects.filter(id=id)
-    recipes = Recipe.objects.filter(chef=id)
+    chef = Chef.objects.filter(id=id).first()
+    recipes = Recipe.objects.filter(chef=chef)
+    
 
-    return render(request, html, {"chefs": chefs, "recipes": recipes})
+    return render(request, html, {"chef": chef, "recipes": recipes})

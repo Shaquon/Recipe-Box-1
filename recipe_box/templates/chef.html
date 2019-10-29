@@ -1,8 +1,7 @@
 <h1>Django Recipes for the Downtrotten</h1>
 <ul>
-    {% for foo in chefs %}
-        <h1>{{foo.chef}}</h1>
-    {% endfor %}
+        <h1>{{ chef.name}}</h1>
+        <h2>{{ chef.bio }}</h2>
         {% for foos in recipes %}
         <ul>
             <li><a href = "/recipe/{{foos.id}}">{{foos.recipe_name}}</a></li>

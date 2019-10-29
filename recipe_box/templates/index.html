@@ -1,10 +1,11 @@
 <h1>Django Recipes for the Downtrotten</h1>
 
 <h2>Recipes by programmers, for the programmers</h3>
-
+{% comment %} had help with logic by Zach Kline {% endcomment %}
 <ul>
-    {% for things in data %}
-        <li><a href = recipe/{{things.id}}>{{ things.recipe_name }}</a>, by <a href = chef/{{things.id}}>{{ things.chef }}</a></li>
+    {% for item in data %}
+        <li><a href='recipe/{{item.id}}/'>{{ item.recipe_name }}</a> by <a
+            href='chef/{{item.chef.id}}'>{{ item.chef }}</a></li>
     {% endfor %}
 </ul>
 
