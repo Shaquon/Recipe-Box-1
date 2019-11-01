@@ -11,6 +11,7 @@ Recipes
     chef
 """
 from django.db import models
+from django.utils import timezone
 
 class Chef(models.Model):
     name = models.CharField(max_length=50)
@@ -20,11 +21,11 @@ class Chef(models.Model):
 
 class Recipe(models.Model):
     chef = models.ForeignKey(Chef, on_delete=models.CASCADE)
-    date = models.DateTimeField()
+    date = models.DateTimeField(default=timezone.now)
     recipe_name = models.CharField(max_length=50)
     ingredients = models.TextField()
     steps = models.TextField()
-    time_required = models.TextField()
+    time_required = models.CharField(max_length=50)
 
     def __str__(self):
         return f"{self.recipe_name}"

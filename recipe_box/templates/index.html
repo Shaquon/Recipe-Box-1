@@ -5,7 +5,7 @@
 <ul>
     {% for item in data %}
         <li><a href='recipe/{{item.id}}/'>{{ item.recipe_name }}</a> by <a
-            href='chef/{{item.chef.id}}'>{{ item.chef }}</a></li>
+            href='chef/{{item.chef.id}}'>{{ item.chef }}</a> created at {{item.date}}</li>
     {% endfor %}
 </ul>
 
