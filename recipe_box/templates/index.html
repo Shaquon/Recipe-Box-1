@@ -2,16 +2,10 @@
 
 <h2>Recipes by programmers, for the programmers</h3>
 {% comment %} had help with logic by Zach Kline {% endcomment %}
+<a href='/chefadd/'>Add a chef</a> <a href='/recipeadd/'> Add Recipe</a>
 <ul>
     {% for item in data %}
         <li><a href='recipe/{{item.id}}/'>{{ item.recipe_name }}</a> by <a
             href='chef/{{item.chef.id}}'>{{ item.chef }}</a> created at {{item.date}}</li>
     {% endfor %}
 </ul>
-
-{% comment %} 
-same for steps but ordered
-stack = things.ingredients.split(".")
-for ingredients in stack:
-    <ul>{{ingredients}}</ul>
-{% endcomment %}
