@@ -26,7 +26,10 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='homepage'),
     path('chef/<int:id>/', views.chef_detail),
-    path("recipe/<int:id>/", views.recipe_detail),
-    path("chefadd/", views.chefaddview, name='chefadd'),
-    path("recipeadd/", views.recipeaddview, name='recipeadd')
+    path('recipe/<int:id>/', views.recipe_detail),
+    path('chefadd/', views.chefaddview, name='chefadd'),
+    path('recipeadd/', views.recipeaddview, name='recipeadd'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('signup/', views.sign_up_view, name='signup')
 ]

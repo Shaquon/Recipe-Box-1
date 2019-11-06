@@ -1,8 +1,8 @@
 <h1>Django Recipes for the Downtrotten</h1>
-
-<h2>Recipes by programmers, for the programmers</h3>
+<h2>Welcome {{ user.username }}!</h2>
+<h3>Recipes by programmers, for the programmers</h3>
 {% comment %} had help with logic by Zach Kline {% endcomment %}
-<a href='/chefadd/'>Add a chef</a> <a href='/recipeadd/'> Add Recipe</a>
+<a href='/login/'> Log in </a> <a href='/signup/'> Sign Up </a> <a href='/logout/'> Log out </a> <br /><a href='/chefadd/'> Add a chef</a> <a href='/recipeadd/'> Add Recipe </a> 
 <ul>
     {% for item in data %}
         <li><a href='recipe/{{item.id}}/'>{{ item.recipe_name }}</a> by <a
